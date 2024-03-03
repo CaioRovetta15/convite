@@ -5,32 +5,43 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: #000000 1px solid;
 }
 
 .component .backside {
   position: absolute;
   width: 826px;
   height: 535px;
-  top: 44px;
-  left: 6px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-50%, -50%);
+  /* Adjust position to center .backside */
   background-color: #f5d6d1;
 }
 
 .component .right {
   position: absolute;
   width: 491px;
-  height: 614px;
-  top: 0;
-  left: 380px;
+  height: 611px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-8%, -51%);
   z-index: 2;
 }
 
 .component .left {
   position: absolute;
   width: 425px;
-  height: 547px;
-  top: 36px;
-  left: 0;
+  height: 546px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-99%, -50.5%);
   z-index: 2;
 }
 
@@ -38,8 +49,11 @@
   position: absolute;
   width: 834px;
   height: 362px;
-  top: 225px;
-  left: 2px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-50%, -24%);
   z-index: 3;
 }
 
@@ -47,8 +61,12 @@
   position: absolute;
   width: 416px;
   height: 826px;
-  top: -190px;
-  left: 187px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-56%, -60.6%);
+  z-index: 4;
 }
 
 .component .top {
@@ -57,7 +75,7 @@
   height: 362px;
   top: 234px;
   left: -186px;
-  z-index: 3;
+  z-index: 1;
 }
 
 .component .seal {
@@ -81,22 +99,31 @@
 
 .component .letter1 {
   position: absolute;
-  top: 70px;
-  left: 60px;
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-50%, -50%);
   /* transform: scale(0.5); */
   z-index: 1;
 }
 
 .component .letter2 {
   position: absolute;
-  top: -330px;
-  left: 60px;
-  transform: rotateX(-90deg);
+  top: 50%;
+  /* Align top of .backside to center of .component */
+  left: 50%;
+  /* Align left of .backside to center of .component */
+  transform: translate(-50%, -50%) rotateX(-90deg);
   z-index: 0;
 }
 
 .component.opened .top {
   animation: rotate 2s ease-in forwards, fade-out 4.5s ease-in forwards;
+}
+
+.component.opened .group {
+  animation: change_index 3s forwards;
 }
 
 .component.opened .seal {
@@ -114,6 +141,7 @@
 
 .component.opened .letter2 {
   animation: flip 2s forwards 5s;
+
 }
 
 .component.opened .right,
@@ -122,6 +150,13 @@
 .component.opened .backside {
   animation: fade-out 1s ease-in forwards;
   animation-delay: 3s;
+}
+
+
+@keyframes change_index {
+  100% {
+    z-index: 0;
+  }
 }
 
 @keyframes rotate {
@@ -138,7 +173,7 @@
   100% {
     transform-origin: top;
     transform: rotateX(180deg);
-    z-index: 0;
+    z-index: 1;
   }
 }
 
@@ -153,7 +188,7 @@
   100% {
 
     /* transform: scale(0.5); */
-    transform: translateY(-400px);
+    transform: translate(-50%, -100%)
   }
 }
 
@@ -165,13 +200,16 @@
 }
 
 @keyframes flip {
+
   0% {
-    transform-origin: bottom;
-    /* transform: rotateX(0deg); */
+    /* transform-origin: bottom; */
+    /* transform: translate(-50%, -50%); */
   }
 
   100% {
     transform-origin: bottom;
-    transform: rotateX(-0.5turn);
+    transform: rotateX(-0.5turn) translate(-50%, 100%);
+    ;
+    ;
   }
 }
