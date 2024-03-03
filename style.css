@@ -1,0 +1,177 @@
+.component {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.component .backside {
+  position: absolute;
+  width: 826px;
+  height: 535px;
+  top: 44px;
+  left: 6px;
+  background-color: #f5d6d1;
+}
+
+.component .right {
+  position: absolute;
+  width: 491px;
+  height: 614px;
+  top: 0;
+  left: 380px;
+  z-index: 2;
+}
+
+.component .left {
+  position: absolute;
+  width: 425px;
+  height: 547px;
+  top: 36px;
+  left: 0;
+  z-index: 2;
+}
+
+.component .bottom {
+  position: absolute;
+  width: 834px;
+  height: 362px;
+  top: 225px;
+  left: 2px;
+  z-index: 3;
+}
+
+.component .group {
+  position: absolute;
+  width: 416px;
+  height: 826px;
+  top: -190px;
+  left: 187px;
+}
+
+.component .top {
+  position: absolute;
+  width: 834px;
+  height: 362px;
+  top: 234px;
+  left: -186px;
+  z-index: 3;
+}
+
+.component .seal {
+  position: absolute;
+  width: 184px;
+  height: 164px;
+  top: 466px;
+  left: 138px;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.component .a-c {
+  position: absolute;
+  width: 195px;
+  height: 59px;
+  top: 396px;
+  left: 128px;
+  z-index: 4;
+}
+
+.component .letter1 {
+  position: absolute;
+  top: 70px;
+  left: 60px;
+  /* transform: scale(0.5); */
+  z-index: 1;
+}
+
+.component .letter2 {
+  position: absolute;
+  top: -330px;
+  left: 60px;
+  transform: rotateX(-90deg);
+  z-index: 0;
+}
+
+.component.opened .top {
+  animation: rotate 2s ease-in forwards, fade-out 4.5s ease-in forwards;
+}
+
+.component.opened .seal {
+  animation: vanish 0.5s forwards;
+}
+
+.component.opened .a-c {
+  animation: vanish 0.5s forwards;
+}
+
+.component.opened .letter1 {
+  animation: up 0.5s forwards;
+  animation-delay: 2s;
+}
+
+.component.opened .letter2 {
+  animation: flip 2s forwards 5s;
+}
+
+.component.opened .right,
+.component.opened .left,
+.component.opened .bottom,
+.component.opened .backside {
+  animation: fade-out 1s ease-in forwards;
+  animation-delay: 3s;
+}
+
+@keyframes rotate {
+  0% {
+    transform-origin: top;
+    /* transform: rotateX(0deg); */
+  }
+
+  70% {
+    transform-origin: top;
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    transform-origin: top;
+    transform: rotateX(180deg);
+    z-index: 0;
+  }
+}
+
+@keyframes vanish {
+  100% {
+    /* transform-origin: bottom; */
+    transform: scale(0);
+  }
+}
+
+@keyframes up {
+  100% {
+
+    /* transform: scale(0.5); */
+    transform: translateY(-400px);
+  }
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes flip {
+  0% {
+    transform-origin: bottom;
+    /* transform: rotateX(0deg); */
+  }
+
+  100% {
+    transform-origin: bottom;
+    transform: rotateX(-0.5turn);
+  }
+}

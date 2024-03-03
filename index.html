@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="component" id="envelope">
+    <div class="overlap">
+      <div class="backside"></div>
+      <img class="right" src="img/right-1.svg" />
+      <img class="left" src="img/left.svg" />
+      <img class="bottom" src="img/bottom.svg" />
+      <img class="letter1" src="img/letter11.jpg" />
+      <img class="letter2" src="img/letter12.jpg" />
+      <div class="group">
+        <img class="top" src="img/top.svg" />
+        <img class="seal" src="img/seal-1.png" />
+        <img class="a-c" src="img/a-c.png" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const envelope = document.getElementById('envelope');
+
+    envelope.addEventListener('click', function () {
+      this.classList.add('opened');
+    });
+  </script>
+</body>
+
+</html>
