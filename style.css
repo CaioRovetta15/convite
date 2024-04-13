@@ -1,6 +1,7 @@
 body {
   background-image: url(img/bgPC.png);
   background-size: cover;
+  overflow: hidden;
 }
 
 .component {
@@ -11,6 +12,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   /* border: #000000 1px solid; */
+}
+
+@media (min-width:1200px) {
+  .component {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
 }
 
 .component .backside {
@@ -123,6 +131,34 @@ body {
   z-index: 0;
 }
 
+.component .list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(350%, 1250%) scale(3);
+  z-index: 10;
+  opacity: 0;
+}
+
+.component .map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-420%, 1250%) scale(3);
+  z-index: 10;
+  opacity: 0;
+}
+
+@media (max-width:1200px) {
+  .component .list {
+    transform: translate(390%, 1300%) scale(3);
+  }
+
+  .component .map {
+    transform: translate(-490%, 1300%) scale(3);
+  }
+}
+
 @media (max-width:1200px) {
   .component .letter_full {
 
@@ -137,7 +173,7 @@ body {
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
-    animation: fade-in 1s ease-in forwards 8s;
+    animation: fade-in 1s ease-in forwards 9s;
     z-index: 10;
   }
 }
@@ -149,28 +185,28 @@ body {
 }
 
 .component.opened .top {
-  animation: rotate 2s ease-in forwards, fade-out 4.5s ease-in forwards;
+  animation: rotate 2s ease-in forwards 1.5s, fade-out 4.5s ease-in  1.5s forwards;
 }
 
 .component.opened .group {
-  animation: change_index 3s forwards;
+  animation: change_index 3s forwards 1.5s;
 }
 
 .component.opened .seal {
-  animation: vanish 0.5s forwards;
+  animation: vanish 0.5s forwards 1.5s;
 }
 
 .component.opened .a-c {
-  animation: vanish 0.5s forwards;
+  animation: vanish 0.5s forwards 1.5s;
 }
 
 .component.opened .letter1 {
   animation: up 0.5s forwards;
-  animation-delay: 2s;
+  animation-delay: 3.5s;
 }
 
 .component.opened .letter2 {
-  animation: flip 2s forwards 5s;
+  animation: flip 2s forwards 6.5s;
 
 }
 
@@ -179,7 +215,7 @@ body {
 .component.opened .bottom,
 .component.opened .backside {
   animation: fade-out 1s ease-in forwards;
-  animation-delay: 3s;
+  animation-delay: 4.5s;
 }
 
 /* .component.opened .letter1,
@@ -262,7 +298,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -50%) scale(0.6);
     opacity: 1;
     z-index: 10;
   }

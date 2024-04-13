@@ -18,6 +18,12 @@
       <img class="letter1" src="img/letter11.jpg" />
       <img class="letter2" src="img/letter12.jpg" />
       <img class="letter_full" src="img/letter2.jpg" />
+      <div class='map'>
+        <a href="https://maps.app.goo.gl/Xfe8HNoj8WAPpXjy8" target="_blank"> Map </a>
+      </div>
+      <div class='list'>
+        <a href="https://www.amazon.com.br/hz/wishlist/ls/WM4FGUEQ0765?ref_=wl_share" target="_blank"> List </a>
+      </div>
       <div class="group">
         <img class="top" src="img/top.svg" />
         <img class="seal" src="img/seal-1.png" />
@@ -27,10 +33,9 @@
   </div>
 
   <script>
-    const envelope = document.getElementById('envelope');
-
-    envelope.addEventListener('click', function () {
-      this.classList.add('opened');
+    document.addEventListener('DOMContentLoaded', function () {
+      const envelope = document.getElementById('envelope');
+      envelope.classList.add('opened');
     });
   </script>
 </body>
