@@ -1,5 +1,5 @@
 body {
-  background-image: url(img/bgPC.png);
+  background-image: url(bgPC.png);
   background-size: cover;
   overflow: hidden;
 }
@@ -135,7 +135,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(350%, 1250%) scale(3);
+  transform: translate(-10%, 1250%) scale(3);
   z-index: 10;
   opacity: 0;
 }
@@ -144,20 +144,51 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-420%, 1250%) scale(3);
+  transform: translate(-600%, 1250%) scale(3);
   z-index: 10;
   opacity: 0;
 }
 
+.component .letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(400%, 1250%) scale(3);
+  z-index: 10;
+  opacity: 0;
+
+}
+
+.popup {
+  /* Adjust popup position if necessary */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  /* Initially hide the popup */
+}
+
 @media (max-width:1200px) {
   .component .list {
-    transform: translate(390%, 1300%) scale(3);
+    transform: translate(-50%, 1400%) scale(3);
   }
 
   .component .map {
-    transform: translate(-490%, 1300%) scale(3);
+    transform: translate(-600%, 1400%) scale(3);
+  }
+
+  .component .letter {
+    transform: translate(400%, 1400%) scale(3);
   }
 }
+
+
 
 @media (max-width:1200px) {
   .component .letter_full {

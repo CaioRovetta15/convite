@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html>
 
+<!DOCTYPE html>
+<html>
+
 <head>
   <meta charset="utf-8" />
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Add CSS for the popup */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #F5D6D1;
+      /* Use the specified background color */
+      padding: 5%;
+      /* 5% of the viewport width */
+      border: none;
+      /* Remove default border */
+      border-radius: 1em;
+      /* Relative border radius */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      display: none;
+      /* Initially hide the popup */
+    }
+
+    /* Style the close button */
+    .popup button {
+      background-color: #333;
+      /* Match the color scheme */
+      color: white;
+      /* Text color */
+      padding: 3% 6%;
+      /* 3% top/bottom, 6% left/right of the viewport width */
+      border: none;
+      /* Remove border */
+      border-radius: 0.5em;
+      /* Relative border radius */
+      cursor: pointer;
+      /* Cursor style */
+      transition: background-color 0.3s ease;
+      /* Smooth transition */
+      font-size: 1em;
+      /* Relative font size */
+    }
+
+    /* Hover effect for the close button */
+    .popup button:hover {
+      background-color: #555;
+      /* Darken the color on hover */
+    }
+
+    .popup p {
+      font-size: 2em;
+      text-align: center;
+      font-family: "Luthier Regular", sans-serif;
+      /* Relative font size and justification */
+    }
+  </style>
 </head>
+
 
 <body>
   <div class="component" id="envelope">
     <div class="overlap">
       <div class="backside"></div>
-      <img class="right" src="img/right-1.svg" />
-      <img class="left" src="img/left.svg" />
-      <img class="bottom" src="img/bottom.svg" />
-      <img class="letter1" src="img/letter11.jpg" />
-      <img class="letter2" src="img/letter12.jpg" />
-      <img class="letter_full" src="img/letter2.png" />
+      <img class="right" src="right-1.svg" />
+      <img class="left" src="left.svg" />
+      <img class="bottom" src="bottom.svg" />
+      <img class="letter1" src="letter_top.jpg" />
+      <img class="letter2" src="letter_bottom.jpg" />
+      <img class="letter_full" src="letter_full.png" />
       <div class='map'>
         <a href="https://maps.app.goo.gl/Xfe8HNoj8WAPpXjy8" target="_blank"> Map </a>
       </div>
       <div class='list'>
         <a href="https://www.amazon.com.br/hz/wishlist/ls/WM4FGUEQ0765?ref_=wl_share" target="_blank"> List </a>
       </div>
+      <div class='letter' onclick="showPopup()"> letter </div>
       <div class="group">
-        <img class="top" src="img/top.svg" />
-        <img class="seal" src="img/seal-1.png" />
-        <img class="a-c" src="img/a-c.png" />
+        <img class="top" src="top.svg" />
+        <img class="seal" src="seal-1.png" />
+        <img class="a-c" src="a-c.png" />
       </div>
     </div>
+  </div>
+
+  <!-- Add the popup content -->
+  <div class="popup" id="popup">
+    <p>Se desejarem nos presentear, ficaríamos muito gratos por qualquer contribuição para nossa lua de
+      mel. Abaixo estão as chaves do PIX:</p>
+    <p>Telefone: (28) 998867726</p>
+    <p>CPF: 168.459.127-93</p>
+    <button onclick="closePopup()">Fechar</button>
   </div>
 
   <script>
@@ -37,6 +104,16 @@
       const envelope = document.getElementById('envelope');
       envelope.classList.add('opened');
     });
+
+    // Function to show the popup
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
   </script>
 </body>
 
