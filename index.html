@@ -60,6 +60,40 @@
       font-family: "Luthier Regular", sans-serif;
       /* Relative font size and justification */
     }
+
+    .manual {
+      position: absolute;
+      top: 50%;
+      /* Align top of .backside to center of .component */
+      left: 50%;
+      /* Align left of .backside to center of .component */
+      transform: translate(350%, 300%);
+    }
+
+    .manual button {
+      background-color: #fcc9c1;
+      /* Match the color scheme */
+      color: #333;
+      /* Text color */
+      padding: 12% 7%;
+      /* 3% top/bottom, 6% left/right of the viewport width */
+      border: none;
+      /* Remove border */
+      border-radius: 0.5em;
+      /* Relative border radius */
+      cursor: pointer;
+      /* Cursor style */
+      transition: background-color 0.3s ease;
+      /* Smooth transition */
+      font-size: 1em;
+      /* Relative font size */
+    }
+
+    /* Hover effect for the close button */
+    .manual button:hover {
+      background-color: #f5dbd7;
+      /* Darken the color on hover */
+    }
   </style>
 </head>
 
@@ -98,7 +132,7 @@
     <button onclick="closePopup()">Fechar</button>
   </div>
   <div class="manual">
-    <a href="manual.html" > Manual dos Convidados</a>
+    <button onclick="redirectToAnotherPage()">Manual dos convidados</button>
   </div>
 
   <script>
@@ -115,6 +149,10 @@
     // Function to close the popup
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
+    }
+
+    function redirectToAnotherPage() {
+      window.location.href = "manual.html";
     }
   </script>
 </body>
