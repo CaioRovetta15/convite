@@ -63,11 +63,12 @@
 
     .manual {
       position: absolute;
-      top: 50%;
+      top: 90%;
       /* Align top of .backside to center of .component */
-      left: 50%;
+      left: 80%;
       /* Align left of .backside to center of .component */
-      transform: translate(350%, 300%);
+      transform: translate(-50%, -50%);
+
     }
 
     .manual button {
@@ -85,7 +86,7 @@
       /* Cursor style */
       transition: background-color 0.3s ease;
       /* Smooth transition */
-      font-size: 1em;
+      font-size: 2em;
       /* Relative font size */
     }
 
@@ -93,6 +94,21 @@
     .manual button:hover {
       background-color: #f5dbd7;
       /* Darken the color on hover */
+    }
+
+    @media (min-width:1200px) {
+      .manual button {
+        font-size: 1em;
+      }
+
+      .manual {
+        top: 90%;
+        /* Align top of .backside to center of .component */
+        left: 85%;
+        /* Align left of .backside to center of .component */
+
+      }
+
     }
   </style>
 </head>

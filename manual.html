@@ -8,22 +8,26 @@
     <style>
         /* Existing CSS styles */
 
+
         .manual {
             width: 50%;
             height: auto;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.6);
+            transform: translate(-50%, -50%) scale(1.5);
         }
+
+
 
         .back {
             position: absolute;
-            top: 50%;
+            top: 90%;
             /* Align top of .backside to center of .component */
-            left: 50%;
+            left: 80%;
             /* Align left of .backside to center of .component */
-            transform: translate(1600%, 600%);
+            transform: translate(-50%, -50%);
+
         }
 
         .back button {
@@ -41,7 +45,7 @@
             /* Cursor style */
             transition: background-color 0.3s ease;
             /* Smooth transition */
-            font-size: 1em;
+            font-size: 2em;
             /* Relative font size */
         }
 
@@ -49,6 +53,25 @@
         .back button:hover {
             background-color: #f5dbd7;
             /* Darken the color on hover */
+        }
+
+        @media (min-width:1200px) {
+            .manual {
+                transform: translate(-50%, -50%) scale(0.6);
+            }
+
+            .back button {
+                font-size: 1em;
+            }
+
+            .back {
+                top: 90%;
+                /* Align top of .backside to center of .component */
+                left: 85%;
+                /* Align left of .backside to center of .component */
+
+            }
+
         }
     </style>
 </head>
